@@ -1,3 +1,4 @@
+//Preston Willis
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,19 +16,19 @@ public class main extends JFrame {
         cardLayout = new CardLayout();
         mainPanel = new JPanel(cardLayout);
 
-        // Create and add the menu panel
+        // create and add the menu panel
         JPanel menuPanel = createMenuPanel();
         mainPanel.add(menuPanel, "Menu");
 
-        // Create and add the game panel
+        // create and add the game panel
         gamePanel = new AimTrainer(this);
         mainPanel.add(gamePanel, "Game");
 
-        // Create and add the game over panel
+        // create and add the game over panel
         gameOverPanel = createGameOverPanel();
         mainPanel.add(gameOverPanel, "GameOver");
 
-        // Set up the frame
+        // et up the frame
         this.setTitle("Aim Trainer");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
@@ -38,7 +39,7 @@ public class main extends JFrame {
 
     private JPanel createMenuPanel() {
         JPanel panel = new JPanel();
-        panel.setLayout(new GridBagLayout()); // Use GridBagLayout to center the components
+        panel.setLayout(new GridBagLayout()); // use gridbaglayout to center the components
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
@@ -67,21 +68,21 @@ public class main extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 cardLayout.show(mainPanel, "Game");
                 gamePanel.startGame(); // Reset and start the game
-                gamePanel.requestFocusInWindow(); // Focus on the game panel for keyboard/mouse events
+                gamePanel.requestFocusInWindow(); // Focus on the game panel for keyboard and mouse events
             }
         });
 
-        gbc.gridy = 1; // Move to the next row
+        gbc.gridy = 1; // move to the next row
         panel.add(playButton, gbc);
 
-        panel.setBackground(Color.BLACK); // Set background color for the menu panel
+        panel.setBackground(Color.BLACK); // set background color for the menu panel
 
         return panel;
     }
     
     private JPanel createGameOverPanel() {
         JPanel panel = new JPanel();
-        panel.setLayout(new GridBagLayout()); // Use GridBagLayout to center the components
+        panel.setLayout(new GridBagLayout()); // Use GBL to center the components
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
